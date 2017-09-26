@@ -2,11 +2,11 @@
 object lunaPark {
 	var capacidad = 9290
 	
-	method capacidad(){
+	method capacidad(unaFecha){
 		return capacidad
 	}
 	
-	method esConcurrido(){
+	method esConcurrido(unaFecha){
 		return capacidad > 5000
 	}
 	

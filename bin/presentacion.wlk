@@ -1,60 +1,30 @@
-import musicos.*
+import lunaPark.*
+import trastienda.*
 
-object lunaPark {
-	var fecha = new Date(20,4,2017)
-	var musicos = [luisAlberto,joaquin,lucia]
-	var capacidad = 9290
+class Presentacion {
+	var lugar
+	var fecha
+	var musicos = []
 	
-	method fecha(){
-		return fecha
-	}
-	
-	method musicos(){
-		return musicos
-	}
-	
-	method agregarUnMusico(unMusico){
-		musicos.add(unMusico)
-	}
-	
-	method quitarUnMusico(unMusico){
-		musicos.remove(unMusico)
-	}
-	
-	method capacidad(){
-		return capacidad
-	}
-	
-	method capacidad(unNumero){
-		capacidad = unNumero
+	constructor(unLugar,unaFecha,losMusicos){
+		lugar = unLugar
+		fecha = unaFecha
+		musicos = losMusicos
 		
 	}
 	
-	method costo(){
-		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
-	}
-	
-	method esConcurrido(){
-		return capacidad > 5000
-	}
-	
-	method laPresentacionEsAntesDeSeptiembre(){
-		return fecha <= new Date(1,09,2017)
-	}
-}
-
-object trastienda {
-	var fecha = new Date(15,11,2017)
-	var musicos = [luisAlberto,joaquin,lucia] 
-	
-	method fecha(){
-		return fecha
+	method lugar(){
+		return lugar
 	}
 	
 	method fecha(unaFecha){
 		fecha = unaFecha
 	}
 	
+	method fecha(){
+		return fecha
+	}
+	
 	method musicos(){
 		return musicos
 	}
@@ -67,29 +37,23 @@ object trastienda {
 		musicos.remove(unMusico)
 	}
 	
-	method capacidad(){
-		if(self.esSabado()){
-			return  700
-		}
-		else
-		
-			return 400
-	}
-	
-	method esSabado(){
-		return (fecha).dayOfWeek() == 6
-	}
-	
 	method costo(){
 		return musicos.sum({ unMusico => unMusico.cuantoCobra(self) })
 	}
 	
 	method esConcurrido(){
-		return self.capacidad() > 5000
+		return lugar.esConcurrido(fecha)
 	}
 	
 	method laPresentacionEsAntesDeSeptiembre(){
 		return fecha <= new Date(1,09,2017)
 	}
 	
+	method capacidad(){
+		return lugar.capacidad(fecha)
+	}
+	
+	
+
+
 }

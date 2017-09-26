@@ -1,8 +1,8 @@
 
 object trastienda {
 	
-	method capacidad(){
-		if(self.esSabado()){
+	method capacidad(unaFecha){
+		if(self.esSabado(unaFecha)){
 			return  700
 		}
 		else
@@ -10,13 +10,13 @@ object trastienda {
 			return 400
 	}
 	
-	method esConcurrido(){
-		return self.capacidad() > 5000
+	method esConcurrido(unaFecha){
+		return self.capacidad(unaFecha) > 5000
 	}
 	
 	
-	method esSabado(){
-		return (fecha).dayOfWeek() == 6
+	method esSabado(unaFecha){
+		return unaFecha.dayOfWeek() == 6
 	}
 
 
