@@ -1,9 +1,11 @@
-import musicoo.*
+import musico.*
 
 class DeGrupo inherits Musico {
-
-	constructor(unGrupo,losAlbunes,unValor,unaHabilidad) = super(unGrupo,losAlbunes,unValor,unaHabilidad)
 	
+	constructor(unGrupo,losAlbunes,unaHabilidad,cantidadAumentar) = super(unGrupo,losAlbunes,unaHabilidad){
+		self.aumentarHabilidad(cantidadAumentar)
+	}
+		
 	method interpretaBienLaCancion(unaCancion){
 		return unaCancion.laCancionEsLarga()
 	}
@@ -24,26 +26,18 @@ class DeGrupo inherits Musico {
 		return (unaPresentacion.musicos()).first() == self
 	}
 	
-	override method grupoAlQuePertenece(){
-		return grupoAlQuePertenece
-		}
+	//override method habilidad(){
+		//if(self.tocaEnGrupo()){
+			//return habilidad += loQueAumenta
+		//}
+		//else
 		
-	method grupoAlQuePertenece(unGrupo){
-		grupoAlQuePertenece = unGrupo
+		//return habilidad
+		
+	method aumentarHabilidad(cantidad){
+		if(!self.esSolista()){
+		habilidad += cantidad
 		}
-	
-	method tocaEnGrupo(){
-		return grupoAlQuePertenece != null
 	}
 	
-	override method habilidad(){
-		if(self.tocaEnGrupo()){
-			return habilidad += 5
-		}
-		else
-		
-		return habilidad
-	}
-
-
 }

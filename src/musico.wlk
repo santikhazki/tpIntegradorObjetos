@@ -1,14 +1,12 @@
 
 class Musico {
 	var grupoAlQuePertenece
-	var albunes = []
-	var esSolista
+	var albumes = []
 	var habilidad
 	
-	constructor(unGrupo,losAlbunes,unValor,unaHabilidad){
+	constructor(unGrupo,losAlbunes,unaHabilidad){
 		grupoAlQuePertenece = unGrupo
-		albunes = losAlbunes
-		esSolista = unValor
+		albumes = losAlbunes
 		habilidad = unaHabilidad
 		
 	}
@@ -17,12 +15,12 @@ class Musico {
 		return grupoAlQuePertenece
 	}
 	
-	method albunes(){
-		return albunes
+	method albumes(){
+		return albumes
 	}
 	
 	method esSolista(){
-		return esSolista
+		return self.grupoAlQuePertenece() == null
 	}
 	
 	method habilidad(){

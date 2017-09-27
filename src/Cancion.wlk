@@ -33,8 +33,8 @@ class Cancion {
 		letra = unaLetra
 	}
 	
-	method laCancionContieneLaPalabraFamilia(){
-		return letra.contains("familia")
+	method laCancionContiene(unaPalabra){
+		return letra.contains(unaPalabra)
 	}
 	
 	method laCancionEsLarga(){
