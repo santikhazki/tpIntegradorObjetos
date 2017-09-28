@@ -1,22 +1,25 @@
-
 class Musico {
 	var grupoAlQuePertenece
 	var albumes = []
 	var habilidad
 	
-	constructor(unGrupo,losAlbunes,unaHabilidad){
+	constructor(unGrupo,losAlbumes,unaHabilidad){
 		grupoAlQuePertenece = unGrupo
-		albumes = losAlbunes
+		albumes = losAlbumes
 		habilidad = unaHabilidad
 		
 	}
 	
-	method grupoAlQuePertenece(){
-		return grupoAlQuePertenece
+	method agregarAlbum(unAlbum){
+		albumes.add(unAlbum)
 	}
 	
-	method grupoAlQuePertenece(unGrupo){
-		grupoAlQuePertenece = unGrupo
+	method grupoAlQuePertenece(unValor){
+		grupoAlQuePertenece = unValor
+	}
+	
+	method grupoAlQuePertenece(){
+		return grupoAlQuePertenece
 	}
 	
 	method albumes(){
@@ -24,12 +27,31 @@ class Musico {
 	}
 	
 	method esSolista(){
-		return self.grupoAlQuePertenece().equals(null)
+		return self.grupoAlQuePertenece() == null
 	}
 	
 	method habilidad(){
 		return habilidad
 	}
-
-
+	
+	method esMinimalista(){
+		return albumes.forEach({ unAlbum => unAlbum.todasSusCancionesSonCortas() }) 
+	}
+	
+	method cancionesQueTienen(unaPalabra){
+		return albumes.forEach({ unAlbum => unAlbum.cancionesConPalabra(unaPalabra) })
+	}
+	
+	method cuantoDuraLaObra(){
+		return albumes.forEach({ unAlbum => unAlbum.duracionAlbum() })
+	}
+	
+	method cancionMasLarga(){
+		return albumes.forEach({ unAlbum => unAlbum.cancionConMasLetra() })
+	}
+	
+	method laPego(){
+		//return albumes.forEach({ unAlbum => unAlbum.buenaVenta() }) //me parece que va un all en vez de un forEach
+		return albumes.all({ unAlbum => unAlbum.buenaVenta() })
+	}
 }

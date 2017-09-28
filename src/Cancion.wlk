@@ -33,11 +33,20 @@ class Cancion {
 		letra = unaLetra
 	}
 	
-	method laCancionContiene(unaPalabra){
-		return letra.contains(unaPalabra)
+	method laCancionContiene(palabra){
+		return letra.contains(palabra)
 	}
 	
 	method laCancionEsLarga(){
 		return duracion > 300
+	}
+	
+	
+	method laCancionEsCorta(){
+		return duracion < 180
+	}
+	
+	method largoDeLetra(){
+		return letra.size()
 	}
 }

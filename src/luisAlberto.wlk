@@ -1,22 +1,9 @@
 import Cancion.*
-import guitarras.*
 import presentacion.*
+import guitarras.*
+import musico.*
 
-object luisAlberto {
-	var grupoAlQuePertenece = null
-	var albumes = []
-	
-	method albumes(){
-		return albumes
-	}
-	
-	method agregarAlbum(unAlbum){
-		albumes.add(unAlbum)
-	}
-	
-	method quitarAlbum(unAlbum){
-		albumes.remove(unAlbum)
-	}
+object luisAlberto inherits Musico(null,[],0){
 	
 	method interpretaBienLaCancion(unaCancion){
 		return true
@@ -26,19 +13,11 @@ object luisAlberto {
 		if(unaPresentacion.laPresentacionEsAntesDeSeptiembre()){
 			return 1000
 		}
-		return 1200
+			return 1200
 	}
 	
-	method grupoAlQuePertenece(){
-		return grupoAlQuePertenece
-		}
-		
-	method grupoAlQuePertenece(unGrupo){
-		grupoAlQuePertenece = unGrupo
-	}
-	
-	method habilidad(unaGuitarra){
-		return 100.min(8 * (unaGuitarra.valorGuitarra()))
+	method modificarHabilidad(unaGuitarra){
+		habilidad = 100.min(8 * (unaGuitarra.valorGuitarra()))
 	}
 	
 }
