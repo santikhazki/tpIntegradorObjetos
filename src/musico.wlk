@@ -15,12 +15,16 @@ class Musico {
 		return grupoAlQuePertenece
 	}
 	
+	method grupoAlQuePertenece(unGrupo){
+		grupoAlQuePertenece = unGrupo
+	}
+	
 	method albumes(){
 		return albumes
 	}
 	
 	method esSolista(){
-		return self.grupoAlQuePertenece() == null
+		return self.grupoAlQuePertenece().equals(null)
 	}
 	
 	method habilidad(){

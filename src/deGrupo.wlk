@@ -2,7 +2,7 @@ import musico.*
 
 class DeGrupo inherits Musico {
 	
-	constructor(unGrupo,losAlbunes,unaHabilidad,cantidadAumentar) = super(unGrupo,losAlbunes,unaHabilidad){
+	constructor(unGrupo,losAlbumes,unaHabilidad,cantidadAumentar) = super(unGrupo,losAlbumes,unaHabilidad){
 		self.aumentarHabilidad(cantidadAumentar)
 	}
 		
@@ -19,7 +19,7 @@ class DeGrupo inherits Musico {
 	}
 	
 	method tocaSolo(unaPresentacion){
-		return ((unaPresentacion.musicos()).size() == 1) && self.esElMismo(unaPresentacion)
+		return ((unaPresentacion.musicos()).size() == 1) //&& self.esElMismo(unaPresentacion)
 	}
 	
 	method esElMismo(unaPresentacion){
