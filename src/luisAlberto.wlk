@@ -6,6 +6,10 @@ object luisAlberto {
 	var grupoAlQuePertenece = null
 	var albumes = []
 	
+	method albumes(){
+		return albumes
+	}
+	
 	method agregarAlbum(unAlbum){
 		albumes.add(unAlbum)
 	}

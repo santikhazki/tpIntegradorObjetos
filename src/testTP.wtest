@@ -38,9 +38,8 @@ describe "group of tests" {
 	}
 	
 	test "Joaquin canta solo y su habilidad es 20" {
+		
 		joaquin.grupoAlQuePertenece(null)
-		joaquin.grupoAlQuePertenece(null)
-		//joaquin = new DeGrupo(null,[],20,5)
 		assert.equals(20,joaquin.habilidad())
 		
 		}
